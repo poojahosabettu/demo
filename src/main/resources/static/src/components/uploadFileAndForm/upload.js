@@ -85,7 +85,7 @@ window.onload = function () {
                  console.log(content);
              })();*/
 
-            fetch('http://localhost:8080/uploadFiles', {
+            fetch('/uploadFiles', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',

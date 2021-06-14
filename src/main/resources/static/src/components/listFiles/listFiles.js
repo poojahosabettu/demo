@@ -1,5 +1,5 @@
 window.onload = function () {
-    fetch('http://localhost:8080/getFiles', {
+    fetch('/getFiles', {
         method: 'GET', // or 'PUT'
     })
         .then(response => response.json())
