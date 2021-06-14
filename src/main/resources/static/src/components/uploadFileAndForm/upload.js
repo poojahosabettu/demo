@@ -1,9 +1,12 @@
 let files = []
 
 window.onload = function () {
-    console.log(document.getElementById('alertonSubmit'));
-    // document.getElementById('tabletList').style.display = "none";
+    document.getElementById('clearButton').addEventListener("click", function () {
+        document.getElementById('uploadedFile').value = '';
+        files = []
+    });
     document.getElementById('form-inline').style.display = "none";
+    document.getElementById('alertonSubmit').style.display = "none";
     document.getElementById('alertonSubmit').style.display = "none";
     document.getElementById('uploadedFile').addEventListener('change', handleFileSelect, false);
     document.getElementById("uploadButton").addEventListener("click", function () {
@@ -56,36 +59,7 @@ window.onload = function () {
         console.log(files);
 
         if (files.length > 0) {
-            /*(async () => {
-                 const rawResponse = await fetch('http://localhost:8080/uploadFiles', {
-                     method: 'POST',
-                     headers: {
-                         'Accept': 'application/json',
-                         'Content-Type': 'application/json'
-                     },
-                     body: JSON.stringify({
-                         userName: 'PoojaDev', candidateProfile: {
-                             name: document.getElementById('candidateName').value,
-                             jobTitle: document.getElementById('candidateTitle').value,
-                             notes: document.getElementById('candidateNotes').value,
-                             resume: files[0].name
-                         }
-                     })
-                 }).then(data => {
-                     console.log(data);
-                     document.getElementById('alertonSubmit').style.display = "block";
-                     document.getElementById('alertonSubmit').innerHTML = '<strong>' + "Holy guacamole!" + '</strong>' + " You successfully submitted " + files.length + " files !!"
-                 }).catch(function (error) {
-                     console.log(error);
-                     document.getElementById('alertonSubmit').style.display = "block";
-                     document.getElementById('alertonSubmit').innerHTML = '<strong>' + "OOps!!" + '</strong>' + " Something went wrong try again in some time !!"
-                 });
-                 console.log(rawResponse);
-                 const content = rawResponse.json();
-                 console.log(content);
-             })();*/
-
-            fetch('/uploadFiles', {
+            fetch('https://resumeuploaderapp.herokuapp.com/uploadFiles', {
                 method: 'POST', // or 'PUT'
                 headers: {
                     'Content-Type': 'application/json',
@@ -141,11 +115,6 @@ window.onload = function () {
                 for (let i = 0; i < files.length; ++i) {
                     row = table.insertRow(-1);
                     for (let val of ['name', 'fullPath']) {
-                        /*let td = document.createElement('td');
-                        let text1 = document.createTextNode(files[i][val]);
-                        td.appendChild(text1);
-                        tr.appendChild(td);*/
-
 
                         var cell = row.insertCell(-1);
                         cell.innerHTML = files[i][val];

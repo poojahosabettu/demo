@@ -1,6 +1,5 @@
 window.onload = function () {
     document.getElementById('alertonSubmit').style.display = "none";
-    document.getElementById('navbar').style.display = "none";
     var forms = document.getElementsByClassName('needs-validation');
     // Loop over them and prevent submission
     Array.prototype.filter.call(forms, function (form) {
@@ -26,7 +25,7 @@ window.onload = function () {
         user = document.getElementById('email').value;
         pwd = document.getElementById('password').value;
         if (user && pwd) {
-            fetch('/validateUser', {
+            fetch('https://resumeuploaderapp.herokuapp.com/validateUser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -40,12 +39,13 @@ window.onload = function () {
                 .then(data => {
                     if (!data) {
                         document.getElementById('alertonSubmit').style.display = "block";
-                        document.getElementById('alertonSubmit').innerHTML = '<strong>' + "Holy guacamole!" + '</strong>' + "User credentials invalid"
+                        document.getElementById('alertonSubmit').innerHTML = '<strong>' + "User credentials invalid" + '</strong>';
 
                         console.log('Success:', data);
                     } else {
                         document.getElementById('loginForm').style.display = "none";
-                        document.getElementById('navbar').style.display = "block";
+                        window.top.glob = user;
+                        window.location.href = "/src/components/navbar/navbar.html"
                     }
                     console.log(data);
                 })

@@ -1,5 +1,6 @@
 window.onload = function () {
-    fetch('/getFiles', {
+    console.log(window.top);
+    fetch('https://resumeuploaderapp.herokuapp.com/getFiles', {
         method: 'GET', // or 'PUT'
     })
         .then(response => response.json())
@@ -31,12 +32,6 @@ window.onload = function () {
                 for (let i = 0; i < files.length; ++i) {
                     row = table.insertRow(-1);
                     for (let val of ['name', 'jobTitle', 'notes', 'resume']) {
-                        /*let td = document.createElement('td');
-                        let text1 = document.createTextNode(files[i][val]);
-                        td.appendChild(text1);
-                        tr.appendChild(td);*/
-
-
                         var cell = row.insertCell(-1);
                         cell.innerHTML = files[i][val];
                     }
