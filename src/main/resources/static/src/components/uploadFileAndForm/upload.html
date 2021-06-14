@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="module" src="globalData.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div style="padding:50px">
+        <div id="alertonSubmit" class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>Holy guacamole!</strong> You successfully submitted more than 10 files !!.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="form" style="display: flex;
+        justify-content: space-around">
+            <form>
+                <div class="form-group">
+                    <label style="display:block" for="exampleFormControlFile1">Choose files for upload</label>
+                    <input class="form-control-small" id="uploadedFile" type="file" multiple size="50" value="Upload Files">
+                    </button>
+                    <button type="button" id="uploadButton" class="btn btn-primary sm">Next</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- <embed id="fileContent" target="_blank" src="051453350433_ClaimForm.pdf " width="100% " height="1200px " /> -->
+        <!-- <table id="tableData">
+            </table> -->
+        <div style="display:flex;justify-content: space-around">
+
+            <form id="form-inline" style="width:40%">
+                <div class="form-group ">
+                    <label for="formGroupExampleInput">Name</label>
+                    <input id="candidateName" type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name" required=true>
+                </div>
+                <div class="form-group ">
+                    <label for="formGroupExampleInput2">Job title</label>
+                    <input id="candidateTitle" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter Job title" required>
+                </div>
+
+                <div class="form-group ">
+                    <label for="exampleFormControlTextarea1">Notes</label>
+                    <textarea id="candidateNotes" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button id="submitButton" type="button" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="upload.js"></script>
+</body>
+
+</html>
