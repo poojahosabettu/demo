@@ -20,7 +20,7 @@ window.onload = function () {
 
         setTimeout(() => {
             document.getElementById('alertonSubmit').style.display = "none";
-        }, 10000);
+        }, 6000);
 
     });
     document.getElementById("submitButton").addEventListener("click", submitAction);
@@ -94,9 +94,9 @@ window.onload = function () {
             document.getElementById('alertonSubmit').innerHTML = "Submit failed files are being uploaded !!"
         }
         setTimeout(() => {
-            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.display = "none";
             document.getElementById('alertonSubmit').style.justifyContent = "space-around";
-        }, 6000);
+        }, 3000);
 
     }
 
