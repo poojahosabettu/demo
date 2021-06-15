@@ -12,8 +12,6 @@ window.onload = function () {
     document.getElementById("uploadButton").addEventListener("click", function () {
         if (files.length > 0) {
             document.getElementById('form-inline').style.display = "block";
-            document.getElementById('alertonSubmit').style.display = "flex";
-            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
         } else {
             document.getElementById('alertonSubmit').style.display = "flex";
             document.getElementById('alertonSubmit').style.justifyContent = "space-around";
