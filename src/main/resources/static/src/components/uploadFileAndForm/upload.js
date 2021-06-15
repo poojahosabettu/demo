@@ -12,15 +12,17 @@ window.onload = function () {
     document.getElementById("uploadButton").addEventListener("click", function () {
         if (files.length > 0) {
             document.getElementById('form-inline').style.display = "block";
-            document.getElementById('alertonSubmit').style.display = "none";
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
         } else {
-            document.getElementById('alertonSubmit').style.display = "block";
-            document.getElementById('alertonSubmit').innerHTML = '<strong>' + "OOps!!" + '</strong>' + " No File to upload!!"
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
+            document.getElementById('alertonSubmit').innerHTML = "OOps!! No File to upload!!"
         }
 
         setTimeout(() => {
             document.getElementById('alertonSubmit').style.display = "none";
-        }, 6000);
+        }, 10000);
 
     });
     document.getElementById("submitButton").addEventListener("click", submitAction);
@@ -31,8 +33,9 @@ window.onload = function () {
         reader.readAsText(event.target.files[0]);
         console.log(event.target.files);
         if (event.target.files.length == 0) {
-            document.getElementById('alertonSubmit').style.display = "block";
-            document.getElementById('alertonSubmit').innerHTML = '<strong>' + "OOps!!" + '</strong>' + " Something went wrong try again in some time !!"
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
+            document.getElementById('alertonSubmit').innerHTML = "Oops Something went wrong try again in some time !!"
             return;
         }
         files = [];
@@ -75,22 +78,26 @@ window.onload = function () {
             })
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('alertonSubmit').style.display = "block";
-                    document.getElementById('alertonSubmit').innerHTML = '<strong>' + "Holy guacamole!" + '</strong>' + data.response
+                    document.getElementById('alertonSubmit').style.display = "flex";
+                    document.getElementById('alertonSubmit').style.justifyContent = "space-around";
+                    document.getElementById('alertonSubmit').innerHTML = "Holy guacamole!" + data.response
 
                     console.log('Success:', data);
                 })
                 .catch((error) => {
-                    document.getElementById('alertonSubmit').style.display = "block";
-                    document.getElementById('alertonSubmit').innerHTML = '<strong>' + "OOps!!" + '</strong>' + " Something went wrong try again in some time !!"
+                    document.getElementById('alertonSubmit').style.display = "flex";
+                    document.getElementById('alertonSubmit').style.justifyContent = "space-around";
+                    document.getElementById('alertonSubmit').innerHTML = "OOps!! Something went wrong try again in some time !!"
 
                 });
         } else {
-            document.getElementById('alertonSubmit').style.display = "block";
-            document.getElementById('alertonSubmit').innerHTML = '<strong>' + "Submit failed " + '</strong>' + " files are being uploaded !!"
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
+            document.getElementById('alertonSubmit').innerHTML = "Submit failed files are being uploaded !!"
         }
         setTimeout(() => {
-            document.getElementById('alertonSubmit').style.display = "none";
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
         }, 6000);
 
     }
@@ -124,7 +131,6 @@ window.onload = function () {
             else {
                 table.style.visibility = "hidden";
             }
-            console.log(table)
         }
     }
 

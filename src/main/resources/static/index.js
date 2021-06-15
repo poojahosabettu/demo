@@ -38,29 +38,32 @@ window.onload = function () {
             }).then(response => response.json())
                 .then(data => {
                     if (!data) {
-                        document.getElementById('alertonSubmit').style.display = "block";
+                        document.getElementById('alertonSubmit').style.display = "flex";
+                        document.getElementById('alertonSubmit').style.justifyContent = "space-around";
                         document.getElementById('alertonSubmit').innerHTML = '<strong>' + "User credentials invalid" + '</strong>';
 
                         console.log('Success:', data);
                     } else {
                         document.getElementById('loginForm').style.display = "none";
-                        window.top.glob = user;
                         window.location.href = "/src/components/navbar/navbar.html"
                     }
                     console.log(data);
                 })
                 .catch((error) => {
-                    document.getElementById('alertonSubmit').style.display = "block";
+                    document.getElementById('alertonSubmit').style.display = "flex";
+                    document.getElementById('alertonSubmit').style.justifyContent = "space-around";
                     document.getElementById('alertonSubmit').innerHTML = '<strong>' + "OOps!!" + '</strong>' + " Something went wrong try again in some time !!"
 
                 });
         } else {
-            document.getElementById('alertonSubmit').style.display = "block";
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
             document.getElementById('alertonSubmit').innerHTML = '<strong>' + "Submit failed " + '</strong>' + " files are being uploaded !!"
         }
 
         setTimeout(() => {
-            document.getElementById('alertonSubmit').style.display = "none";
+            document.getElementById('alertonSubmit').style.display = "flex";
+            document.getElementById('alertonSubmit').style.justifyContent = "space-around";
         }, 6000);
     }
 

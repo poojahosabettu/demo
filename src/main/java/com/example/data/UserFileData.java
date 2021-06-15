@@ -28,6 +28,7 @@ public class UserFileData {
 
 	public UserFileData() {
 		adminUserInfo.put("pooja", "pooja");	
+		adminUserInfo.put("user", "user");		
 	}
 
 	
